@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Habbit</title>
+    <link rel="stylesheet" href="./css/main.css">
+</head>
+<body>
+
+    <div class="app">
+
+        <div class="panel">
+
+            <img class="logo__img" src="./images/Logo.svg"alt="Logo Gabbit App">
+
+            <nav class="menu">
+                <div class="menu__list">
+                    <button class="menu__item menu__item_active">
+                        <img class="menu__habbit" src="./images/icons/Water.svg" alt="Вода">
+                    </button>
+                    <button class="menu__item">
+                        <img class="menu__habbit" src="./images/icons/Water.svg" alt="Вода">
+                    </button>
+                    <button class="menu__item">
+                        <img class="menu__habbit" src="./images/icons/Water.svg" alt="Вода">
+                    </button>
+                </div>  
+                <button class="menu__add">
+                    <img class="menu__add-task" src="./images/icons/AddIcon.svg" alt="Добавить новую задачу">
+                </button>
+            </nav>
+
+        </div>
+
+        <div class="content">
+
+            <header class="header">
+
+                <h1 class="header__title">Title Name</h1>
+                <div class="progress">
+                    <div class="progress__text">
+                        <p class="progress__text-title">Title Progress</p>
+                        <p class="progress__text-num">80%</p>
+                    </div>
+                    <div class="progress__bar">
+                        <div class="progress__cover-bar"></div>
+                    </div>
+                </div>
+
+            </header>
+
+            <main class="main">
+
+                    <div class="habbit">
+                        <div class="habbit__day">
+                            День 1
+                        </div>
+                        <div class="habbit__desc">
+                            Первый подход всегда даётся тяжело
+                        </div>
+                        <button class="habbit__del">
+                            <img class="habbit__del-img" src="./images/delete.svg" alt="delete day">
+                        </button>
+                    </div>
+
+                    <div class="habbit">
+                        <div class="habbit__day">
+                            День 1000
+                        </div>
+                        <form class="habbit__desc habbit__form">
+                            <input class="habbit__form-inp" type="text" placeholder="Комментарий">
+                            <img class="habbit__form-img" src="./images/add_task.svg" alt="add new task">
+                            <input type="submit" value="Готово" class="habbit__form-btn"></input>
+                        </form>
+
+            </main>
+
+        </div>
+
+    </div>
+    
+</body>
+</html>
