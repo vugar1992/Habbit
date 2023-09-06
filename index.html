@@ -16,17 +16,8 @@
 
             <nav class="menu">
                 <div class="menu__list">
-                    <button class="menu__item menu__item_active">
-                        <img class="menu__habbit" src="./images/icons/Water.svg" alt="Вода">
-                    </button>
-                    <button class="menu__item">
-                        <img class="menu__habbit" src="./images/icons/Water.svg" alt="Вода">
-                    </button>
-                    <button class="menu__item">
-                        <img class="menu__habbit" src="./images/icons/Water.svg" alt="Вода">
-                    </button>
                 </div>  
-                <button class="menu__add">
+                <button class="menu__add" onclick="togglePopup()">
                     <img class="menu__add-task" src="./images/icons/AddIcon.svg" alt="Добавить новую задачу">
                 </button>
             </nav>
@@ -37,11 +28,11 @@
 
             <header class="header">
 
-                <h1 class="header__title">Title Name</h1>
+                <h1 class="header__title"></h1>
                 <div class="progress">
                     <div class="progress__text">
-                        <p class="progress__text-title">Title Progress</p>
-                        <p class="progress__text-num">80%</p>
+                        <p class="progress__text-title">Прогресс</p>
+                        <p class="progress__text-num"></p>
                     </div>
                     <div class="progress__bar">
                         <div class="progress__cover-bar"></div>
@@ -51,34 +42,54 @@
             </header>
 
             <main class="main">
+                
+                <div class="main__content">
+                    
+                </div>
 
-                    <div class="habbit">
-                        <div class="habbit__day">
-                            День 1
-                        </div>
-                        <div class="habbit__desc">
-                            Первый подход всегда даётся тяжело
-                        </div>
-                        <button class="habbit__del">
-                            <img class="habbit__del-img" src="./images/delete.svg" alt="delete day">
-                        </button>
+                <div class="habbit">
+                    <div class="habbit__day">
+                        
                     </div>
-
-                    <div class="habbit">
-                        <div class="habbit__day">
-                            День 1000
-                        </div>
-                        <form class="habbit__desc habbit__form">
-                            <input class="habbit__form-inp" type="text" placeholder="Комментарий">
-                            <img class="habbit__form-img" src="./images/add_task.svg" alt="add new task">
-                            <input type="submit" value="Готово" class="habbit__form-btn"></input>
-                        </form>
-
+                    <form class="habbit__desc habbit__form" onsubmit="newMessage(event)">
+                        <input class="habbit__form-inp" name="message" type="text" placeholder="Комментарий">
+                         <img class="habbit__form-img" src="./images/add_task.svg" alt="add new task">
+                        <input type="submit" value="Готово" class="habbit__form-btn"></input>
+                    </form>
+                </div>
+                    
             </main>
 
         </div>
 
+        <div class="cover" onclick="togglePopup()"></div>
+        
+        <div class="popup">
+            <div class="popup__window">
+                <h2 class="popup__title">Новая привычка</h2>
+                <button class="popup__cross" onclick="togglePopup()">
+                    <img src="./images/cross.svg" alt="close">
+                </button>
+                <div class="icon">
+                    <p class="icon__title">Иконка</p>
+                    <button class="icon__btn icon__active" onclick="setIcon(this, 'sport')">
+                        <img src="./images/icons/sport.svg" alt="sport">
+                    </button>
+                    <button class="icon__btn" onclick="setIcon(this, 'water')">
+                        <img src="./images/icons/Water.svg" alt="water">
+                    </button>
+                </div>
+                <form class="form" onsubmit="addHabbits(event)">
+                    <input type="text" name="name" class="form__name" placeholder="Название">
+                    <input type="text" hidden name="icon" class="form__name" placeholder="icon" value="sport">
+                    <input type="number" name="target" class="form__target" placeholder="Цель">
+                    <input type="submit" class="habbit__form-btn" value="Добавить">
+                </form>
+            </div>
+        </div>
+        
     </div>
     
+    <script src="./scripts/app.js"></script>
 </body>
 </html>

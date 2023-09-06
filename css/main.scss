@@ -121,8 +121,8 @@ h1, h2, h3, h4, h5, p
     }
     &__cover-bar
     {
+        transition: .3s;
         position: absolute;
-        width: 50%;
         height: 5px;
         border-radius: 4px;
         background: #5051F9;
@@ -132,6 +132,10 @@ h1, h2, h3, h4, h5, p
 .main
 {
     margin-top: 30px;
+    &__content
+    {
+        margin-bottom: 12px;
+    }
 }
 .habbit
 {
@@ -188,6 +192,7 @@ h1, h2, h3, h4, h5, p
             border: 1px solid #E7EBFB;
             padding: .69em 0 .69em 4em;
             flex-grow: 1;
+            outline: none;
             &::placeholder
             {
                 color: #8899A8;
@@ -213,10 +218,148 @@ h1, h2, h3, h4, h5, p
             font-weight: 500;
             cursor: pointer;
             transition: .3s;
+            outline: none;
             &:hover
             {
                 background: #e8e7ff;
             }
         }
     }
+}
+.cover
+{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.25);
+    transform: scale(0);
+    &__habbit
+    {
+        transform: scale(1);
+    }
+}
+.popup
+{
+    position: absolute;
+    z-index: 100;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 424px;
+    height: 338px;
+    border-radius: 10px;
+    background: #FFF;
+    box-shadow: 0px 8px 14px 12px rgba(56, 56, 56, 0.05);
+    transform: scale(0);
+    &__habbit
+    {
+        transform: translate(-50%, -50%) scale(1);
+    }
+    &__window
+    {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        padding: 22px 22px 42px 22px;
+        height: 100%;
+    }
+    &__title
+    {
+        // text-align: center;
+        font-size: 24px;
+        font-weight: 400;
+    }
+    &__cross
+    {
+        position: absolute;
+        top: 15px;
+        right: 15px;
+        border: none;
+        background: none;
+        cursor: pointer;
+    }
+}
+.icon__title
+{
+    color: #768396;
+    font-size: 14px;
+    font-weight: 500;
+    text-align: center;
+    margin-bottom: 9px;
+}
+.icon__btn
+{
+    width: 46px;
+    height: 45px;
+    border-radius: 14px;
+    border: 1px solid #5051F9;
+    background: none;
+    cursor: pointer;
+    margin-right: 25px;
+    &:last-child
+    {
+        margin-right: 0;
+    }
+    &:hover
+    {
+        background: #6a6afb;
+        & img
+        {
+            filter: brightness(0) invert(1);
+        }
+    }
+}
+.icon__active
+{
+    background: #5051F9;
+    & img
+    {
+        filter: brightness(0) invert(1);
+    }
+}
+.form
+{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+    &__name, &__target
+    {
+        width: 100%;
+        border-radius: 9px;
+        border: 1px solid #E7EBFB;
+        background: #FFF;
+        padding: 11px 0 11px 20px;
+        outline: none;
+        &::placeholder
+        {ч
+            color: #8899A8;
+            font-size: 14px;
+            font-weight: 400;
+        }
+    }
+    &__name
+    {
+        margin-bottom: 6px;
+    }
+    &__target
+    {
+        margin-bottom: 17px;
+    }
+    &__btn
+    {
+        border-radius: 9px;
+        background: #EDECFE;
+        color: #5051F9;
+        font-size: 13px;
+        font-weight: 500;
+    }
+}
+.error
+{
+    border: 1px solid #ff0000;
 }
